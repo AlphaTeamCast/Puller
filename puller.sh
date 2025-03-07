@@ -24,4 +24,9 @@ read -s github_token
 echo
 
 # Clone the repository using the provided token
-git clone https://${github_token}@github.com/AlphaTeamCast/INstall.git
+if git clone https://${github_token}@github.com/AlphaTeamCast/INstall.git; then
+    echo -e "\e[33mRepo cloned completely!\e[0m"
+else
+    echo -e "\e[31mError: Failed to clone repository\e[0m"
+    exit 1
+fi
