@@ -35,6 +35,11 @@ echo
 # Clone the repository using the provided token
 if git clone https://${github_token}@github.com/AlphaTeamCast/INstall.git; then
     echo -e "\e[33mRepo cloned completely in home directory!\e[0m"
+    
+    # Make all .sh files executable
+    echo -e "\e[33mMaking all shell scripts executable...\e[0m"
+    find INstall -type f -name "*.sh" -exec chmod +x {} \;
+    echo -e "\e[33mAll shell scripts are now executable!\e[0m"
 else
     echo -e "\e[31mError: Failed to clone repository\e[0m"
     exit 1
